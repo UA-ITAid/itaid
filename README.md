@@ -16,9 +16,11 @@
 3. Запустіть сервер
 ```shell
   docker ps
-e165b6e1b6c8   dev-db-ruby-3.1.0-rails-7.0.1    "docker-entrypoint.s…"   6 hours ago   Up 6 hours   0.0.0.0:54321->5432/tcp   devcontainer-itaid_development-1
-2637019f4883   test-db-ruby-3.1.0-rails-7.0.1   "docker-entrypoint.s…"   6 hours ago   Up 6 hours   0.0.0.0:54322->5432/tcp   devcontainer-itaid_test-1
-ba4778553aa3   ruby-3.1.0-rails-7.0.1           "sleep infinity"         6 hours ago   Up 6 hours   0.0.0.0:3000->3000/tcp    devcontainer-itaid-1
-  docker exec -it ba4778553aa3 bin/dev
+9046ae8a6027   dev-db-ruby-3.1.0-rails-7.0.1    "docker-entrypoint.s…" 5 hours ago   Up 5 hours   0.0.0.0:54321->5432/tcp   itaid-itaid_development-1
+542d101a168c   ruby-3.1.0-rails-7.0.1           "sleep infinity"       5 hours ago   Up 5 hours   0.0.0.0:3000->3000/tcp    itaid-itaid-1
+ca5bedbda262   test-db-ruby-3.1.0-rails-7.0.1   "docker-entrypoint.s…" 5 hours ago   Up 5 hours   0.0.0.0:54322->5432/tcp   itaid-itaid_test-1
+ef33b9949941   mutagenio/sidecar:0.13.1         "mutagen-sidecar"      5 hours ago   Up 5 hours                             itaid-mutagen-1
+
+  docker exec -it 542d101a168c bin/dev
 ```
-де `ba4778553aa3` ідентифікатор контейнера з списку
+де `542d101a168c` ідентифікатор контейнера з проектом зі списку

@@ -1,0 +1,16 @@
+detectors:
+  IrresponsibleModule:
+    enabled: false
+  FeatureEnvy:
+    exclude:
+      - 'DeviseCreateAccounts#change'
+  TooManyStatements:
+    exclude:
+      - 'DeviseCreateAccounts#change'
+exclude_paths:
+  - vendor
+  - public
+  - tmp
+  - storage
+  - log
+  - config/application.rb

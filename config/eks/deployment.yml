@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: itaid-production-deployment
+  labels:
+    app: itaid-production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: itaid-production
+  template:
+    metadata:
+      labels:
+        app: itaid-production
+    spec:
+      containers:
+      - name: itaid-production
+        image: TODO
+        ports:
+        - containerPort: 3030

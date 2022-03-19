@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: nginx
+spec:
+  controller: k8s.io/ingress-nginx
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: itaid-production-ingress
+  annotations:
+    cert-namager.io/cluster-issuer: itaid-production-letsencrypt
+spec:
+  ingressClassName
+  rules:
+  - host: "uaitaid.org"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: itaid-production-service
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - uaitaid.org
+    secretName: itaid-production-cert

@@ -141,7 +141,7 @@ GEM
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.5.11)
-    io-wait (0.2.1)
+    io-wait (0.2.0)
     irb (1.4.1)
       reline (>= 0.3.0)
     jbuilder (2.11.5)
@@ -344,6 +344,7 @@ DEPENDENCIES
   guard-rspec
   guard-rubocop
   importmap-rails
+  io-wait (= 0.2.0)
   jbuilder
   pg (~> 1.2.1)
   pry-byebug
@@ -365,7 +366,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.1.0p0
+   ruby 3.0.3p0
 
 BUNDLED WITH
-   2.3.3
+   2.3.7

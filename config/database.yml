@@ -86,3 +86,4 @@ production:
   database: <%= ENV["ITAID_DATABASE_SOURCE"] %>
   username: postgres
   password: <%= ENV["ITAID_DATABASE_PASSWORD"] %>
+  url: <%= ENV["ITAID_DATABASE_URL"] %>

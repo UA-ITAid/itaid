@@ -75,8 +75,8 @@ end
 ########################################################################
 
 gem 'devise'
-gem 'tailwindcss-rails', '~> 2.0'
 gem 'io-wait', '0.2.0'
+gem 'tailwindcss-rails', '~> 2.0'
 
 group :development, :test do
   gem 'annotate'

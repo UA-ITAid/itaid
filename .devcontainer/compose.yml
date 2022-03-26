@@ -1,46 +1,35 @@
 volumes:
   code:
+x-db: &pg-db
+  image: postgres:14
+  environment:
+    - LC_ALL=C.UTF-8
+    - POSTGRES_DB=itaid_test
+    - POSTGRES_USER=itaid_test
+    - POSTGRES_HOST_AUTH_METHOD=trust
 services:
-  # name of the service
   itaid:
-    image: ruby-3.1.0-rails-7.0.1
+    image: itaid_app
     build:
       context: .
-      # use Dockerfile for build
       dockerfile: Dockerfile.app
     volumes:
-      # mount parent directory as /itaid with cahed configuration for speedup
       - code:/itaid
-    # set mounted directory as default
     working_dir: /itaid
     command: sleep infinity
     environment:
-      # install gems to the folder with project files
       - BUNDLE_PATH=vendor/bundle
     ports:
       - 3000:3000
   itaid_development:
-    image: dev-db-ruby-3.1.0-rails-7.0.1
-    build:
-      context: .
-      dockerfile: Dockerfile.db
+    <<: *pg-db
     environment:
-      - LC_ALL=C.UTF-8
       - POSTGRES_DB=itaid_development
       - POSTGRES_USER=itaid_development
-      - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
       - 54321:5432
   itaid_test:
-    image: test-db-ruby-3.1.0-rails-7.0.1
-    build:
-      context: .
-      dockerfile: Dockerfile.db
-    environment:
-      - LC_ALL=C.UTF-8
-      - POSTGRES_DB=itaid_test
-      - POSTGRES_USER=itaid_test
-      - POSTGRES_HOST_AUTH_METHOD=trust
+    <<: *pg-db
     ports:
       - 54322:5432
 # Set up Mutagen synchronization and forwarding.

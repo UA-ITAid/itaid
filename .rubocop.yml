@@ -126,6 +126,10 @@ Style/Documentation:
   Exclude:
     - 'config/application.rb'
     - 'app/helpers/application_helper.rb'
-Stylr/MethodLength:
+
+Metrics/MethodLength:
   Exclude:
     - 'db/migrate/**/*.rb'
+
+Naming/BlockForwarding:
+  EnforcedStyle: explicit

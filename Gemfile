@@ -75,7 +75,9 @@ end
 ########################################################################
 
 gem 'devise'
+gem 'devise-i18n'
 gem 'io-wait', '0.2.0'
+gem 'rails-i18n', '~> 7.0.0'
 gem 'tailwindcss-rails', '~> 2.0'
 
 group :development, :test do

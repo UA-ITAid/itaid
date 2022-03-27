@@ -4,9 +4,11 @@ detectors:
   FeatureEnvy:
     exclude:
       - 'DeviseCreateAccounts#change'
+      - 'EnableAdditionalDeviseFeaturesForAccounts#change'
   TooManyStatements:
     exclude:
       - 'DeviseCreateAccounts#change'
+      - 'EnableAdditionalDeviseFeaturesForAccounts#change'
 exclude_paths:
   - vendor
   - public

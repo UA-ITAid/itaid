@@ -1,7 +1,7 @@
-name: "AWS EC2 - Production deploy Frankfurt"
+name: "AWS ECR - Demo deploy Frankfurt"
 on:
   push:
-    branches: [ main ]
+    branches: [ mainn ]
 jobs:
   build:
     name: Build Docker image
